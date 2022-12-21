@@ -10,7 +10,7 @@
 
 <div class="container">
     <div class="row row-cols-6">
-        @foreach ($comics as $comic)
+        @foreach ($comics as $key => $comic)
         <div class=" my_card">
             <div class="card_image">
                 <a href="{{route('show', $comic->id)}}">
