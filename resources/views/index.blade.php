@@ -13,7 +13,7 @@
         @foreach ($comics as $key => $comic)
         <div class=" my_card">
             <div class="card_image">
-                <a href="{{route('show'), $comic->id}}">
+                <a href="#">
                     <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
                 </a>
             </div>
