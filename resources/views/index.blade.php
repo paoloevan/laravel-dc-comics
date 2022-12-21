@@ -10,10 +10,10 @@
 
 <div class="container">
     <div class="row row-cols-6">
-        @foreach ($comics as $key => $comic)
+        @foreach ($comics as $comic)
         <div class=" my_card">
             <div class="card_image">
-                <a href="{{route('show', $key+1)}}">
+                <a href="{{route('show', $comic->id)}}">
                     <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
                 </a>
             </div>
