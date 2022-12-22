@@ -9,6 +9,7 @@
 </div>
 
 <div class="container">
+    <a class="btn btn-primary m-2" href="{{route('create')}}">Aggiungi fumetto</a>
     <div class="row row-cols-6">
         @foreach ($comics as $key => $comic)
         <div class=" my_card">

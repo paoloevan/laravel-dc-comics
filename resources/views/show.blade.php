@@ -1,10 +1,14 @@
+@extends('layout.app')
+
+@section('content')
 <div class="container py-5">
     <div class="d-flex gap-4">
-        <div class="details">
-            <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+        <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+        <div class="details text-white">
             <h1>{{$comic->title}}</h1>
             <p>{{$comic->description}}</p>
-            <p>{{$comic->price}}</p>
+            <p>Price: {{$comic->price}}</p>
         </div>
     </div>
 </div>
+@endsection

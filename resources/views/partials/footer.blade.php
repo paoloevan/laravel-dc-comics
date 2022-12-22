@@ -4,8 +4,10 @@
         <div class="header_footer">
             <div class="buy">
                 @foreach ($buy as $item)
-                <img src="{{Vite::asset($item['image'])}}" alt="">
-                {{ $item['text'] }}
+                <div class="mx-3">
+                    <img src="{{Vite::asset($item['image'])}}" alt="">
+                    {{ $item['text'] }}
+                </div>
                 @endforeach
             </div>
         </div>
@@ -13,7 +15,7 @@
         <div class="main_footer">
             <div class="container">
                 <div class="content">
-                    <div class="col_4">
+                    <div class="col_4 me-3">
                         @foreach ($links as $link)
                         <div class="footer_title">{{ $link['title'] }}</div>
                         @foreach ($link['link'] as $text)
@@ -21,14 +23,14 @@
                         @endforeach
                         @endforeach
                     </div>
-                    <div class="col_4">
+                    <div class="col_4 me-3">
                         @foreach ($linksTwo as $link)
                         <div class="footer_title">{{ $link['title'] }}</div>
                         @foreach ($link['link'] as $text)
                         <a class="footer_link" href="#">{{ $text['text'] }}</a>
                         @endforeach @endforeach
                     </div>
-                    <div class="col_4">
+                    <div class="col_4 me-3">
                         @foreach ($sities as $link)
                         <div class="footer_title">{{ $link['title'] }}</div>
                         @foreach ($link['link'] as $text)
