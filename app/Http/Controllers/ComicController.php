@@ -110,7 +110,7 @@ class ComicController extends Controller
 
         $comic->update($data);
 
-        return to_route('index')->with('message', 'Modified successfully');
+        return to_route('index')->with('message', "$comic->title modified successfully");
     }
 
     /**
@@ -121,6 +121,8 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return to_route('index')->with('message', "$comic->title delete successfully");
     }
 }

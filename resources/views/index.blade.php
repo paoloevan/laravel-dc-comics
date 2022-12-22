@@ -10,13 +10,25 @@
 
 <div class="container">
     <a class="btn btn-primary m-2" href="{{route('create')}}">Add comic</a>
+    @if (session('message'))
     <strong class="text-white bg-success p-2 lh-lg">{{session('message')}}</strong>
+    @endif
     <div class="row row-cols-6 mt-3">
         @foreach ($comics as $key => $comic)
         <div class=" my_card">
             <div class="card_image">
-                <a class="btn btn-secondary mb-2 p-1 px-2" href="{{route('edit', $comic->id)}}">Edit</a>
-                <a href="{{route('show', $comic->id)}}">
+                <div class="d-flex gap-2 mb-2">
+                    <!-- edit item -->
+                    <a class=" btn btn-secondary px-2" href="{{route('edit', $comic->id)}}">Edit</a>
+                    <!-- delete item -->
+                    <form action="{{route('destroy', $comic->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
+                </div>
+                <a href=" {{route('show', $comic->id)}}">
                     <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
                 </a>
             </div>
