@@ -1,4 +1,7 @@
 @extends('layout.app')
+@section('title')
+Show
+@endsection
 
 @section('content')
 <div class="container py-5">

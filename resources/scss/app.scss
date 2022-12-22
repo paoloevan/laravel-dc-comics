@@ -51,6 +51,8 @@ header {
 // jumbotron
 
 main {
+    background-color: $secondary_color;
+
     .jumbotron {
         height: 350px;
         width: 100%;
@@ -75,12 +77,6 @@ main {
             left: 10rem;
         }
     }
-}
-
-//main
-
-main {
-    background-color: $secondary_color;
 
     .load {
         text-align: center;
@@ -96,11 +92,12 @@ main {
 
         }
     }
-}
 
-// cards style
 
-main {
+
+    // cards style
+
+
     .container {
         display: flex;
         flex-wrap: wrap;

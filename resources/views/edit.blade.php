@@ -1,4 +1,7 @@
 @extends('layout.app')
+@section('title')
+Edit
+@endsection
 
 @section('content')
 
@@ -25,10 +28,13 @@
                 <small id="descriptionHlper" class="text-muted">Edit the description here</small>
         </div>
 
-        <div class="mb-3">
-            <label for="thumb" class="form-label">Image</label>
-            <input value="{{$comic['thumb']}}" type="text" name="thumb" id="thumb" class="form-control" aria-describedby="thumbHlper">
-            <small id="thumbHlper" class="text-muted">Edit the image here</small>
+        <div class="mb-3 d-flex justify-content-between gap-5">
+            <div class="flex-grow-1">
+                <label for="thumb" class="form-label ">Image</label>
+                <input value="{{$comic['thumb']}}" type="text" name="thumb" id="thumb" class="form-control" aria-describedby="thumbHlper">
+                <small id="thumbHlper" class="text-muted">Edit the image here</small>
+            </div>
+            <img height="100" src="{{$comic['thumb']}}" alt="">
         </div>
 
         <div class="mb-3">

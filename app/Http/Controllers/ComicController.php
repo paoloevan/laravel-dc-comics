@@ -16,9 +16,7 @@ class ComicController extends Controller
     public function index()
     {
         $comics_list = config('comics');
-        // dd($comics_list['comics']);
         $comics = Comic::all();
-        // dd($comics);
         return view('index', compact('comics'), $comics_list);
     }
 

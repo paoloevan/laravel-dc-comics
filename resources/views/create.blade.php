@@ -1,4 +1,7 @@
 @extends('layout.app')
+@section('title')
+Create
+@endsection
 
 @section('content')
 
@@ -10,7 +13,7 @@
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="title" id="title" class="form-control" aria-describedby="titleHlper">
-            <small id="titleHlper" class="text-muted">Add the post title here</small>
+            <small id="titleHlper" class="text-muted">Add the title here</small>
         </div>
 
         <div class="mb-3">
