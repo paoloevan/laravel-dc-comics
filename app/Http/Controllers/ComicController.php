@@ -40,13 +40,22 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        $validated = $request->validated();
+        $comic = $request->validated();
 
-        $comic = Comic::create($validated);
+        $newComic = new Comic;
+        $newComic->title = $comic['title'];
+        $newComic->description = $comic['description'];
+        $newComic->thumb = $comic['thumb'];
+        $newComic->price = $comic['price'];
+        $newComic->series = $comic['series'];
+        $newComic->sale_date = $comic['sale_date'];
+        $newComic->type = $comic['type'];
+        $newComic->save();
+
 
         // Comic::create($data);
 
-        return redirect()->route('index'); //->with('message', "$comic->title created successfully");
+        return redirect()->route('index')->with('message', "$newComic->title created successfully");
     }
 
     /**
@@ -84,9 +93,9 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = $request->all();
+        $validated = $request->validated();
 
-        $comic->update($data);
+        $comic->update($validated);
 
         return to_route('index')->with('message', "$comic->title modified successfully");
     }
