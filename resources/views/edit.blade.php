@@ -9,15 +9,8 @@ Edit
     <div class="text-white">
         <h1>Edit Comic</h1>
         <h3>{{$comic['title']}}</h3>
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+        @include('partials.error')
+
     </div>
 
     <form action="{{route('update', $comic['id'])}}" method="post" class="card p-3 col-6">

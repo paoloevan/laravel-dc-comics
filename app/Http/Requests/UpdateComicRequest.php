@@ -39,4 +39,21 @@ class UpdateComicRequest extends FormRequest
             'type' => 'nullable|max:254'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.unique' => 'Il titolo è già stato inserito',
+            'title.required' => 'Il titolo è richiesto',
+            'title.min' => 'Il titolo è troppo corto',
+            'title.max' => 'Il titolo è troppo lungo',
+            'description.required' => 'La descrizione è rischiesta',
+            'description.max' => 'La descrizione è troppo lunga',
+            'description.min' => 'La descrizione è troppo corta',
+            'price.max' => 'Il prezzo è troppo lungo',
+            'series.max' => 'La serie è troppo lunga',
+            'sale_date.max' => 'La data è troppo lunga',
+            'type.max' => 'Il tipo è troppo corto'
+        ];
+    }
 }

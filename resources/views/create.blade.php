@@ -7,6 +7,8 @@ Create
 
 <div class="container justify-content-center gap-5">
     <h1 class="text-white">Add new Comic</h1>
+    @include('partials.error')
+
     <form action="{{route('store')}}" method="post" class="card p-3 col-6">
         @csrf
 
